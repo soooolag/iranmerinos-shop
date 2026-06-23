@@ -166,17 +166,7 @@ iran merinos/
 
 ## 💻 نصب
 
-این پروژه هیچ وابستگی (Dependency) یا فرآیند Build ندارد. کافی است فایل‌ها را دانلود یا کلون کنید:
-
-```bash
-git clone <repository-url>
-cd "iran merinos"
-```
-
-یا به‌سادگی فایل ZIP پروژه را Extract کنید.
-
-نیازی به نصب Node.js، npm یا هیچ پکیجی نیست.
-
+https://soooolag.github.io/iranmerinos-shop/
 ---
 
 ## ▶️ نحوه‌ی اجرای پروژه
