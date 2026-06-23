@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ورود و ثبت‌نام | ایران مرینوس</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <meta name="description" content="ورود به حساب کاربری ایران مرینوس">
+  <meta property="og:title" content="ورود و ثبت‌نام | ایران مرینوس">
+  <meta property="og:description" content="ورود به حساب کاربری ایران مرینوس">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="assets/images/logo.png">
+</head>
+<body>
+
+  <div class="textile-bg"></div>
+  <div class="bg-glow"></div>
+  <div class="bg-vignette"></div>
+
+  <div class="header-wrap">
+    <header>
+      <a class="logo" href="index.html">
+        <img src="assets/images/logo.png" alt="ایران مرینوس" width="40" height="40">
+        <span class="logo-title">ایران <span>مرینوس</span></span>
+      </a>
+      <nav class="header-nav">
+        <a href="index.html">خانه</a>
+        <a href="shop.html">فروشگاه</a>
+        <a href="about.html">درباره ما</a>
+        <a href="contact.html">تماس</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="سبد خرید">
+          <svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-badge">۰</span>
+        </button>
+      </div>
+    </header>
+  </div>
+
+  <main class="login-page">
+    <div class="container">
+      <div class="login-wrap">
+
+        <!-- Brand Panel -->
+        <div class="login-brand">
+          <div class="login-brand-logo">
+            <img src="assets/images/logo.png" alt="ایران مرینوس">
+            <span class="login-brand-logo-name">ایران <span>مرینوس</span></span>
+          </div>
+
+          <div class="login-brand-mid">
+            <h2 class="login-brand-title">
+              به خانواده
+              <span>ایران مرینوس خوش آمدید</span>
+            </h2>
+            <p class="login-brand-desc">
+              با ثبت‌نام در ایران مرینوس به بهترین پارچه‌های فاستونی ایران دسترسی پیدا کنید — با قیمت مستقیم از کارخانه.
+            </p>
+            <div class="login-brand-features">
+              <div class="login-feature">
+                <div class="login-feature-icon">
+                  <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                دسترسی به +۳۰ نوع پارچه انحصاری
+              </div>
+              <div class="login-feature">
+                <div class="login-feature-icon">
+                  <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                </div>
+                ذخیره علاقه‌مندی‌ها و سفارش‌ها
+              </div>
+              <div class="login-feature">
+                <div class="login-feature-icon">
+                  <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+                </div>
+                پیگیری آنلاین وضعیت ارسال
+              </div>
+              <div class="login-feature">
+                <div class="login-feature-icon">
+                  <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                </div>
+                تخفیف‌های ویژه اعضای باشگاه
+              </div>
+            </div>
+          </div>
+
+          <div class="login-brand-bottom">
+            © ۱۴۰۴ ایران مرینوس — تمامی حقوق محفوظ است
+          </div>
+        </div>
+
+        <!-- Form Panel -->
+        <div class="login-form-panel">
+
+          <div class="login-tabs">
+            <button class="login-tab active" onclick="switchTab('login')">ورود</button>
+            <button class="login-tab" onclick="switchTab('register')">ثبت‌نام</button>
+          </div>
+
+          <!-- Login Form -->
+          <div class="login-panel active" id="panel-login">
+            <div>
+              <div class="login-panel-title">خوش برگشتید 👋</div>
+              <div class="login-panel-desc">با شماره موبایل یا ایمیل وارد شوید</div>
+            </div>
+
+            <div class="login-form-group">
+              <label class="login-form-label" for="login-phone">شماره موبایل یا ایمیل</label>
+              <div class="login-form-input-wrap">
+                <input id="login-phone" class="login-form-input" type="text" autocomplete="username" placeholder="۰۹۱۲ — ۰۰۰ ۰۰۰۰" style="direction: ltr; text-align: right;">
+                <div class="login-input-icon">
+                  <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.5 2 2 0 0 1 3.59 1.3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16z"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="login-form-group">
+              <label class="login-form-label" for="login-password">رمز عبور</label>
+              <div class="login-form-input-wrap">
+                <input id="login-password" class="login-form-input" type="password" placeholder="رمز عبور خود را وارد کنید" autocomplete="current-password">
+                <div class="login-input-icon">
+                  <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="login-form-row">
+              <label class="login-remember">
+                <input type="checkbox"> مرا به خاطر بسپار
+              </label>
+              <span class="login-forgot">فراموشی رمز عبور؟</span>
+            </div>
+
+            <button class="login-submit">
+              <svg viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+              ورود به حساب
+            </button>
+
+            <div class="login-divider">یا ورود با</div>
+
+            <div class="login-social">
+              <button class="login-social-btn">
+                <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+                تلگرام
+              </button>
+              <button class="login-social-btn">
+                <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+                اینستاگرام
+              </button>
+            </div>
+
+            <div class="login-terms">
+              حساب ندارید؟
+              <a onclick="switchTab('register')">همین الان ثبت‌نام کنید</a>
+            </div>
+          </div>
+
+          <!-- Register Form -->
+          <div class="login-panel" id="panel-register">
+            <div>
+              <div class="login-panel-title">ثبت‌نام رایگان ✨</div>
+              <div class="login-panel-desc">در کمتر از یک دقیقه حساب بسازید</div>
+            </div>
+
+            <div class="login-form-grid">
+              <div class="login-form-group">
+                <label class="login-form-label" for="reg-firstname">نام</label>
+                <div class="login-form-input-wrap">
+                  <input id="reg-firstname" class="login-form-input" type="text" placeholder="نام شما" autocomplete="given-name">
+                  <div class="login-input-icon">
+                    <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </div>
+                </div>
+              </div>
+              <div class="login-form-group">
+                <label class="login-form-label" for="reg-lastname">نام خانوادگی</label>
+                <div class="login-form-input-wrap">
+                  <input id="reg-lastname" class="login-form-input" type="text" placeholder="نام خانوادگی" autocomplete="family-name">
+                  <div class="login-input-icon">
+                    <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="login-form-group">
+              <label class="login-form-label" for="reg-phone">شماره موبایل</label>
+              <div class="login-form-input-wrap">
+                <input id="reg-phone" class="login-form-input" type="tel" autocomplete="tel" placeholder="۰۹۱۲ — ۰۰۰ ۰۰۰۰" style="direction: ltr; text-align: right;">
+                <div class="login-input-icon">
+                  <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.5 2 2 0 0 1 3.59 1.3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16z"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="login-form-group">
+              <label class="login-form-label" for="reg-password">رمز عبور</label>
+              <div class="login-form-input-wrap">
+                <input id="reg-password" class="login-form-input" type="password" placeholder="حداقل ۸ کاراکتر" autocomplete="new-password">
+                <div class="login-input-icon">
+                  <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="login-form-group">
+              <label class="login-form-label" for="reg-password-confirm">تکرار رمز عبور</label>
+              <div class="login-form-input-wrap">
+                <input id="reg-password-confirm" class="login-form-input" type="password" placeholder="رمز عبور را تکرار کنید" autocomplete="new-password">
+                <div class="login-input-icon">
+                  <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+              </div>
+            </div>
+
+            <button class="login-submit">
+              <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+              ساخت حساب کاربری
+            </button>
+
+            <div class="login-terms">
+              با ثبت‌نام، <a>قوانین و مقررات</a> و <a>حریم خصوصی</a> را می‌پذیرم.
+              <br>حساب دارید؟ <a onclick="switchTab('login')">وارد شوید</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </main>
+  <script>
+    function switchTab(tab) {
+      document.querySelectorAll('.login-tab').forEach((t,i) => {
+        t.classList.toggle('active', (tab==='login' && i===0) || (tab==='register' && i===1));
+      });
+      document.querySelectorAll('.login-panel').forEach(p => p.classList.remove('active'));
+      document.getElementById('panel-' + tab).classList.add('active');
+    }
+  </script>
+
+  <script src="assets/js/login.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/login.js"></script>
+</body>
+</html>

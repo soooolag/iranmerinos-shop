@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>سبد خرید | ایران مرینوس</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .cart-page { padding-top: calc(var(--header-h) + 40px); padding-bottom: 6rem; }
+    .cart-layout { display: grid; grid-template-columns: 1fr 360px; gap: 28px; align-items: start; margin-top: 36px; }
+    .cart-title { font-size: clamp(26px,4vw,38px); font-weight: 800; color: var(--text); letter-spacing:-0.025em; margin-bottom: 6px; }
+    .cart-title span { color: var(--green-light); }
+    .cart-subtitle { font-size: 13px; color: var(--text-muted); }
+
+    .cart-items { display: flex; flex-direction: column; gap: 12px; }
+    .cart-item {
+      background: rgba(8,18,15,0.85); border: 1px solid rgba(0,125,104,0.12);
+      border-radius: 14px; padding: 18px 20px;
+      display: grid; grid-template-columns: 80px 1fr auto;
+      gap: 16px; align-items: center;
+      transition: border-color 0.2s;
+    }
+    .cart-item:hover { border-color: rgba(0,125,104,0.28); }
+    .cart-item-img {
+      width: 80px; height: 80px; border-radius: 10px;
+      overflow: hidden; border: 1px solid rgba(0,125,104,0.12); position: relative;
+    }
+    .cart-item-img-bg { position: absolute; inset: 0; }
+    .cart-item-info {}
+    .cart-item-type { font-size: 9px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(0,180,148,0.6); margin-bottom: 4px; }
+    .cart-item-name { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .cart-item-meta { font-size: 12px; color: var(--text-faint); display: flex; gap: 10px; }
+    .cart-item-right { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+    .cart-item-price { font-size: 16px; font-weight: 800; color: var(--green-light); white-space: nowrap; }
+    .cart-item-qty {
+      display: flex; align-items: center; gap: 0;
+      background: rgba(0,125,104,0.06); border: 1px solid rgba(0,125,104,0.15); border-radius: 8px; overflow: hidden;
+    }
+    .cart-qty-btn { width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--text-muted); font-size: 16px; font-weight: 300; background: transparent; border: none; font-family: inherit; transition: background 0.15s, color 0.15s; }
+    .cart-qty-btn:hover { background: rgba(0,125,104,0.12); color: var(--green); }
+    .cart-qty-num { width: 36px; text-align: center; font-size: 13px; font-weight: 700; color: var(--text); border-left: 1px solid rgba(0,125,104,0.12); border-right: 1px solid rgba(0,125,104,0.12); line-height: 30px; }
+    .cart-item-remove { font-size: 11px; color: rgba(192,57,43,0.6); cursor: pointer; transition: color 0.2s; }
+    .cart-item-remove:hover { color: #E74C3C; }
+
+    .cart-empty {
+      text-align: center; padding: 80px 20px;
+      background: rgba(8,18,15,0.7); border: 1px solid rgba(0,125,104,0.1);
+      border-radius: 16px;
+    }
+    .cart-empty-icon { font-size: 48px; margin-bottom: 16px; opacity: 0.3; }
+    .cart-empty-title { font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+    .cart-empty-desc { font-size: 13px; color: var(--text-muted); margin-bottom: 24px; }
+
+    .cart-summary {
+      background: rgba(8,18,15,0.85); border: 1px solid rgba(0,125,104,0.12);
+      border-radius: 16px; padding: 24px; position: sticky; top: calc(var(--header-h) + 20px);
+    }
+    .cart-summary-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 20px; }
+    .summary-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid rgba(0,125,104,0.07); font-size: 13px; }
+    .summary-row:last-of-type { border-bottom: none; }
+    .summary-label { color: var(--text-muted); }
+    .summary-val { color: var(--text); font-weight: 600; }
+    .summary-total { font-size: 18px; font-weight: 900; color: var(--green-light); }
+    .summary-divider { height: 1px; background: rgba(0,125,104,0.1); margin: 8px 0; }
+    .summary-note { font-size: 11px; color: var(--text-faint); text-align: center; margin: 12px 0; }
+    .summary-note span { color: var(--green); }
+    .cart-checkout-btn {
+      width: 100%; height: 52px; background: var(--green); border: none; border-radius: 10px;
+      color: #EAF5F2; font-size: 15px; font-weight: 700; letter-spacing: 0.04em;
+      cursor: pointer; font-family: inherit; transition: background 0.2s, transform 0.15s;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+    }
+    .cart-checkout-btn:hover { background: var(--green-light); transform: translateY(-1px); }
+    .cart-checkout-btn svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2.5; stroke-linecap: round; }
+    .cart-continue { width: 100%; height: 44px; background: transparent; border: 1px solid rgba(0,125,104,0.2); border-radius: 10px; color: var(--text-muted); font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit; transition: all 0.2s; margin-top: 10px; }
+    .cart-continue:hover { border-color: rgba(0,125,104,0.4); color: var(--text); }
+
+    @media (max-width: 768px) {
+      .cart-layout { grid-template-columns: 1fr; }
+      .cart-summary { position: static; }
+      .cart-item { grid-template-columns: 64px 1fr; }
+      .cart-item-right { grid-column: 1/-1; flex-direction: row; justify-content: space-between; align-items: center; }
+    }
+  </style>
+  <meta name="description" content="مدیریت سبد خرید ایران مرینوس">
+  <meta property="og:title" content="سبد خرید | ایران مرینوس">
+  <meta property="og:description" content="مدیریت سبد خرید ایران مرینوس">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="assets/images/logo.png">
+</head>
+<body>
+
+  <div class="textile-bg"></div>
+  <div class="bg-glow"></div>
+  <div class="bg-vignette"></div>
+
+  <div class="header-wrap">
+    <header>
+      <a class="logo" href="index.html">
+        <img src="assets/images/logo.png" alt="ایران مرینوس" width="40" height="40">
+        <span class="logo-title">ایران <span>مرینوس</span></span>
+      </a>
+      <nav class="header-nav">
+        <a href="index.html">خانه</a>
+        <a href="shop.html">فروشگاه</a>
+        <a href="about.html">درباره ما</a>
+        <a href="contact.html">تماس</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" aria-label="جستجو">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4"/></svg>
+        </button>
+        <button class="icon-btn active" aria-label="سبد خرید">
+          <svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          <span class="cart-badge">۲</span>
+        </button>
+        <div class="header-sep"></div>
+        <button class="btn-login" onclick="location.href='login.html'">ورود / ثبت‌نام</button>
+      </div>
+    </header>
+  </div>
+
+  <main class="cart-page">
+    <div class="container">
+
+      <div class="reveal">
+        <div class="hero-card-label"><span class="dot"></span> سبد خرید</div>
+        <h1 class="cart-title">سبد خرید <span>شما</span></h1>
+        <p class="cart-subtitle">۲ محصول در سبد خرید شما</p>
+      </div>
+
+      <div class="cart-layout">
+
+        <!-- آیتم‌ها -->
+        <div class="cart-items reveal">
+
+          <div class="cart-item">
+            <div class="cart-item-img">
+              <div class="cart-item-img-bg pt-1"></div>
+            </div>
+            <div class="cart-item-info">
+              <div class="cart-item-type">MERINO WOOL</div>
+              <div class="cart-item-name">فاستونی مرینوس ایتالیایی — سرمه‌ای</div>
+              <div class="cart-item-meta">
+                <span>رنگ: سرمه‌ای</span>
+                <span>•</span>
+                <span>۱۵۰ سانت</span>
+              </div>
+            </div>
+            <div class="cart-item-right">
+              <div class="cart-item-price">۲,۵۰۰,۰۰۰ ت</div>
+              <div style="display:flex;align-items:center;gap:12px;">
+                <div class="cart-item-qty">
+                  <button class="cart-qty-btn">−</button>
+                  <div class="cart-qty-num">۲</div>
+                  <button class="cart-qty-btn">+</button>
+                </div>
+                <span class="cart-item-remove">حذف</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cart-item">
+            <div class="cart-item-img">
+              <div class="cart-item-img-bg pt-3"></div>
+            </div>
+            <div class="cart-item-info">
+              <div class="cart-item-type">GABARDINE</div>
+              <div class="cart-item-name">فاستونی گابردین چهارخانه — قهوه‌ای</div>
+              <div class="cart-item-meta">
+                <span>رنگ: قهوه‌ای</span>
+                <span>•</span>
+                <span>۱۵۰ سانت</span>
+              </div>
+            </div>
+            <div class="cart-item-right">
+              <div class="cart-item-price">۹۶۰,۰۰۰ ت</div>
+              <div style="display:flex;align-items:center;gap:12px;">
+                <div class="cart-item-qty">
+                  <button class="cart-qty-btn">−</button>
+                  <div class="cart-qty-num">۱</div>
+                  <button class="cart-qty-btn">+</button>
+                </div>
+                <span class="cart-item-remove">حذف</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- خلاصه -->
+        <div class="cart-summary reveal reveal-delay-1">
+          <div class="cart-summary-title">خلاصه سفارش</div>
+
+          <div class="summary-row">
+            <span class="summary-label">جمع محصولات</span>
+            <span class="summary-val">۳,۴۶۰,۰۰۰ ت</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-label">هزینه ارسال</span>
+            <span class="summary-val" style="color:var(--green);">رایگان</span>
+          </div>
+          <div class="summary-row">
+            <span class="summary-label">تخفیف</span>
+            <span class="summary-val" style="color:#E74C3C;">— ۰ ت</span>
+          </div>
+          <div class="summary-divider"></div>
+          <div class="summary-row">
+            <span class="summary-label" style="font-weight:700;color:var(--text);">مبلغ قابل پرداخت</span>
+            <span class="summary-total">۳,۴۶۰,۰۰۰ ت</span>
+          </div>
+
+          <div class="summary-note">
+            ارسال رایگان برای سفارش‌های بالای <span>۵۰۰,۰۰۰ ت</span>
+          </div>
+
+          <button class="cart-checkout-btn" onclick="alert('در نسخه نهایی به درگاه پرداخت متصل میشه')">
+            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            ادامه و پرداخت
+          </button>
+          <button class="cart-continue" onclick="location.href='shop.html'">
+            ادامه خرید
+          </button>
+
+          <!-- کد تخفیف -->
+          <div style="margin-top:20px;padding-top:16px;border-top:1px solid rgba(0,125,104,0.08);">
+            <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:10px;">کد تخفیف</div>
+            <div style="display:flex;gap:8px;">
+              <input style="flex:1;height:40px;background:rgba(0,125,104,0.05);border:1px solid rgba(0,125,104,0.15);border-radius:8px;padding:0 12px;font-size:13px;color:var(--text);font-family:inherit;outline:none;direction:ltr;" placeholder="کد تخفیف را وارد کنید">
+              <button style="padding:0 16px;background:rgba(0,125,104,0.1);border:1px solid rgba(0,125,104,0.25);border-radius:8px;color:var(--green);font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap;">اعمال</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <!-- برند -->
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <img src="assets/images/logo.png" alt="ایران مرینوس">
+            <span class="footer-logo-name">ایران <span>مرینوس</span></span>
+          </div>
+          <p class="footer-tagline">
+            تولیدکننده و عرضه‌کننده تخصصی انواع فاستونی — از کارخانه مستقیم به دست شما.
+          </p>
+          <div class="footer-social">
+            <button class="footer-social-btn" title="اینستاگرام">
+              <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </button>
+            <button class="footer-social-btn" title="تلگرام">
+              <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+            </button>
+            <button class="footer-social-btn" title="واتساپ">
+              <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </button>
+            <button class="footer-social-btn" title="لینکدین">
+              <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- لینک‌های سریع -->
+        <div class="footer-col">
+          <div class="footer-col-title">دسترسی سریع</div>
+          <div class="footer-links">
+            <a class="footer-link" href="index.html">صفحه اصلی</a>
+            <a class="footer-link" href="shop.html">فروشگاه</a>
+            <a class="footer-link" href="about.html">درباره ما</a>
+            <a class="footer-link" href="contact.html">تماس با ما</a>
+            <a class="footer-link" href="login.html">ورود / ثبت‌نام</a>
+          </div>
+        </div>
+
+        <!-- محصولات -->
+        <div class="footer-col">
+          <div class="footer-col-title">محصولات</div>
+          <div class="footer-links">
+            <a class="footer-link" href="shop.html">فاستونی مرینوس</a>
+            <a class="footer-link" href="shop.html">فاستونی ویول</a>
+            <a class="footer-link" href="shop.html">فاستونی گابردین</a>
+            <a class="footer-link" href="shop.html">فاستونی فلانل</a>
+            <a class="footer-link" href="shop.html">فاستونی تویید</a>
+          </div>
+        </div>
+
+        <!-- تماس -->
+        <div class="footer-col">
+          <div class="footer-col-title">تماس با ما</div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.5 2 2 0 0 1 3.59 1.3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16z"/></svg>
+            </div>
+            <div>
+              <div class="footer-contact-label">تلفن</div>
+              <div class="footer-contact-val">۰۲۱ — ۸۸۴۴۵۵۶۶</div>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="footer-contact-label">ایمیل</div>
+              <div class="footer-contact-val">info@iranmerinos.ir</div>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <div class="footer-contact-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="footer-contact-label">آدرس</div>
+              <div class="footer-contact-val">تهران، بازار بزرگ پارچه</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-copy">© ۱۴۰۴ ایران مرینوس — تمامی حقوق محفوظ است</div>
+        <div class="footer-bottom-links">
+          <a class="footer-bottom-link">حریم خصوصی</a>
+          <a class="footer-bottom-link">شرایط استفاده</a>
+          <a class="footer-bottom-link">قوانین خرید</a>
+        </div>
+        <div class="footer-made">با ❤ ساخته شده در ایران</div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/cart.js"></script>
+</body>
+</html>

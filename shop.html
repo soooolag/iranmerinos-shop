@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="fa">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="فروشگاه فاستونی ایران مرینوس — خرید انواع پارچه فاستونی" name="description"/>
+<title>فروشگاه | ایران مرینوس</title>
+<link href="assets/css/style.css" rel="stylesheet"/>
+  <meta name="description" content="خرید انواع فاستونی با قیمت مستقیم از کارخانه">
+  <meta property="og:title" content="فروشگاه | ایران مرینوس">
+  <meta property="og:description" content="خرید انواع فاستونی با قیمت مستقیم از کارخانه">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="assets/images/logo.png">
+</head>
+<body>
+<div class="textile-bg"></div>
+<div class="bg-glow"></div>
+<div class="bg-vignette"></div>
+<div class="header-wrap">
+<header>
+<a class="logo" href="index.html">
+<img alt="ایران مرینوس" height="40" src="assets/images/logo.png" width="40"/>
+<span class="logo-title">ایران <span>مرینوس</span></span>
+</a>
+<nav class="header-nav">
+<a href="index.html">خانه</a>
+<a class="active" href="shop.html">فروشگاه</a>
+<a href="about.html">درباره ما</a>
+<a href="contact.html">تماس</a>
+</nav>
+<div class="header-actions">
+<button aria-label="جستجو" class="icon-btn">
+<svg viewbox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m16.5 16.5 4 4"></path></svg>
+</button>
+<button aria-label="سبد خرید" class="icon-btn">
+<svg viewbox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" x2="21" y1="6" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+<span class="cart-badge">۰</span>
+</button>
+<div class="header-sep"></div>
+<button class="btn-login" onclick="location.href='login.html'">ورود / ثبت‌نام</button>
+</div>
+</header>
+</div>
+<main class="shop-page">
+<div class="container">
+<div class="shop-hero">
+<div class="shop-hero-inner">
+<div class="shop-hero-text">
+<div class="shop-hero-label"><span class="dot"></span> فروشگاه تخصصی</div>
+<h1 class="shop-hero-title">انتخاب از میان<br/><span>بهترین فاستونی‌ها</span></h1>
+<p class="shop-hero-desc">مستقیم از کارخانه — با ضمانت کیفیت و ارسال سریع</p>
+</div>
+<div class="shop-hero-stats">
+<div class="shop-stat"><div class="shop-stat-num">+۳۰</div><div class="shop-stat-label">نوع پارچه</div></div>
+<div class="shop-stat-sep"></div>
+<div class="shop-stat"><div class="shop-stat-num">+۵۰</div><div class="shop-stat-label">رنگ موجود</div></div>
+<div class="shop-stat-sep"></div>
+<div class="shop-stat"><div class="shop-stat-num">۷ روز</div><div class="shop-stat-label">ضمانت برگشت</div></div>
+</div>
+</div>
+</div>
+<div class="shop-search-wrap">
+<input class="shop-search" id="shopSearch" placeholder="جستجو در محصولات... (مثال: مرینوس سرمه‌ای)" type="text"/>
+<div class="shop-search-icon">
+<svg viewbox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="m16.5 16.5 4 4"></path></svg>
+</div>
+</div>
+<div class="shop-layout">
+<aside class="shop-sidebar">
+<div class="sidebar-block">
+<div class="sidebar-title">نوع پارچه <span class="sidebar-clear" onclick="clearFilter(this)">پاک کردن</span></div>
+<div class="filter-list">
+<div class="filter-item active" onclick="toggleFilter(this)"><div class="filter-item-left"><div class="filter-check"><svg class="filter-check-mark" viewbox="0 0 10 8"><polyline points="1 4 3.5 7 9 1"></polyline></svg></div><span class="filter-label">همه</span></div><span class="filter-count">۳۰</span></div>
+<div class="filter-item" onclick="toggleFilter(this)"><div class="filter-item-left"><div class="filter-check"><svg class="filter-check-mark" viewbox="0 0 10 8"><polyline points="1 4 3.5 7 9 1"></polyline></svg></div><span class="filter-label">مرینوس</span></div><span class="filter-count">۸</span></div>
+<div class="filter-item" onclick="toggleFilter(this)"><div class="filter-item-left"><div class="filter-check"><svg class="filter-check-mark" viewbox="0 0 10 8"><polyline points="1 4 3.5 7 9 1"></polyline></svg></div><span class="filter-label">ویول</span></div><span class="filter-count">۶</span></div>
+<div class="filter-item" onclick="toggleFilter(this)"><div class="filter-item-left"><div class="filter-check"><svg class="filter-check-mark" viewbox="0 0 10 8"><polyline points="1 4 3.5 7 9 1"></polyline></svg></div><span class="filter-label">گابردین</span></div><span class="filter-count">۷</span></div>
+<div class="filter-item" onclick="toggleFilter(this)"><div class="filter-item-left"><div class="filter-check"><svg class="filter-check-mark" viewbox="0 0 10 8"><polyline points="1 4 3.5 7 9 1"></polyline></svg></div><span class="filter-label">فلانل</span></div><span class="filter-count">۵</span></div>
+<div class="filter-item" onclick="toggleFilter(this)"><div class="filter-item-left"><div class="filter-check"><svg class="filter-check-mark" viewbox="0 0 10 8"><polyline points="1 4 3.5 7 9 1"></polyline></svg></div><span class="filter-label">تویید</span></div><span class="filter-count">۴</span></div>
+</div>
+</div>
+<div class="sidebar-block">
+<div class="sidebar-title">محدوده قیمت</div>
+<div class="price-range-new">
+<div class="price-range-labels">
+<span id="priceMinLabel">۵۰۰,۰۰۰</span>
+<span style="color:var(--text-faint)">—</span>
+<span id="priceMaxLabel">۲,۰۰۰,۰۰۰</span>
+</div>
+<div class="price-track-wrap">
+<div class="price-track">
+<div class="price-range-fill" id="priceRangeFill"></div>
+</div>
+<input class="price-thumb" id="priceMin" max="2000000" min="500000" step="50000" type="range" value="500000"/>
+<input class="price-thumb" id="priceMax" max="2000000" min="500000" step="50000" type="range" value="2000000"/>
+</div>
+<div class="price-presets">
+<button class="price-preset" data-max="1000000" data-min="500000">زیر ۱M</button>
+<button class="price-preset" data-max="1500000" data-min="1000000">۱M — ۱.۵M</button>
+<button class="price-preset" data-max="2000000" data-min="1500000">بالای ۱.۵M</button>
+</div>
+</div>
+</div>
+<div class="sidebar-block">
+<div class="sidebar-title">رنگ <span class="sidebar-clear" id="colorClear" onclick="clearColors()" style="display:none">پاک کردن</span></div>
+<div class="color-swatches" id="colorSwatches">
+<div class="color-swatch" data-color="سرمه‌ای" style="background:#1B2A4A" title="سرمه‌ای"></div>
+<div class="color-swatch" data-color="مشکی" style="background:#2C2C2C" title="مشکی"></div>
+<div class="color-swatch" data-color="خاکستری" style="background:#5C5C5C" title="خاکستری"></div>
+<div class="color-swatch" data-color="قهوه‌ای" style="background:#4A3728" title="قهوه‌ای"></div>
+<div class="color-swatch" data-color="سبز" style="background:#2C4A3E" title="سبز"></div>
+<div class="color-swatch" data-color="کرم" style="border:1px solid rgba(0,125,104,0.2)" title="کرم"></div>
+<div class="color-swatch" data-color="آبی" style="background:#1C3A5C" title="آبی"></div>
+<div class="color-swatch" data-color="زرشکی" style="background:#5C1A1A" title="زرشکی"></div>
+<div class="color-swatch" data-color="نوک‌مدادی" style="background:#B8A080" title="نوک‌مدادی"></div>
+</div>
+</div>
+<div class="sidebar-block" id="seasonBlock">
+<div class="sidebar-title">فصل کاربرد</div>
+<div class="filter-list" id="seasonFilterList">
+<div class="filter-item"><div class="filter-item-left"><div class="filter-check"><svg class="filter-check-mark" viewbox="0 0 10 8"><polyline points="1 4 3.5 7 9 1"></polyline></svg></div><span class="filter-label">چهارفصل</span></div><span class="filter-count">۱۴</span></div>
+<div class="filter-item"><div class="filter-item-left"><div class="filter-check"><svg class="filter-check-mark" viewbox="0 0 10 8"><polyline points="1 4 3.5 7 9 1"></polyline></svg></div><span class="filter-label">تابستانه</span></div><span class="filter-count">۸</span></div>
+<div class="filter-item"><div class="filter-item-left"><div class="filter-check"><svg class="filter-check-mark" viewbox="0 0 10 8"><polyline points="1 4 3.5 7 9 1"></polyline></svg></div><span class="filter-label">زمستانه</span></div><span class="filter-count">۸</span></div>
+</div>
+</div>
+</aside>
+<div class="shop-main">
+<div class="shop-toolbar">
+<div class="shop-result-count">نمایش <strong id="visibleCount">16</strong> از <strong>16</strong> محصول</div>
+<div class="shop-toolbar-right">
+<select class="shop-sort">
+<option>مرتب‌سازی: پیشنهادی</option>
+<option>ارزان‌ترین</option>
+<option>گران‌ترین</option>
+<option>جدیدترین</option>
+<option>پرفروش‌ترین</option>
+</select>
+<div class="view-toggle">
+<button class="view-btn active" id="gridViewBtn" onclick="setView('grid')" title="شبکه‌ای">
+<svg viewbox="0 0 24 24"><rect height="7" width="7" x="3" y="3"></rect><rect height="7" width="7" x="14" y="3"></rect><rect height="7" width="7" x="3" y="14"></rect><rect height="7" width="7" x="14" y="14"></rect></svg>
+</button>
+<button class="view-btn" id="listViewBtn" onclick="setView('list')" title="لیستی">
+<svg viewbox="0 0 24 24"><line x1="3" x2="21" y1="6" y2="6"></line><line x1="3" x2="21" y1="12" y2="12"></line><line x1="3" x2="21" y1="18" y2="18"></line></svg>
+</button>
+</div>
+</div>
+</div>
+<div class="products-grid" id="productsGrid">
+<div class="product-card" data-color="سرمه‌ای" data-price="۱۲۵۰۰۰۰" data-season="چهارفصل" data-type="merino" onclick="location.href='product.html?id=1'">
+<div class="product-badge badge-new">جدید</div>
+<div class="product-img">
+<div class="product-img-bg pt-1"></div>
+<div class="product-img-overlay"></div>
+<div class="product-actions">
+<button class="product-action-btn" onclick="event.stopPropagation()" title="علاقه‌مندی">
+<svg viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+</button>
+<button class="product-action-btn" onclick="event.stopPropagation()" title="مقایسه">
+<svg viewbox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+</button>
+</div>
+</div>
+<div class="product-body">
+<div class="product-meta">
+<span class="product-type">MERINO WOOL</span>
+<div class="product-stars">★★★★★ <span>(۲۴)</span></div>
+</div>
+<h3 class="product-name">فاستونی مرینوس ایتالیایی — سرمه‌ای</h3>
+<p class="product-desc">۱۰۰٪ پشم مرینوس خالص، بافت ظریف چهارفصل</p>
+<div class="product-specs">
+<span class="product-spec-tag">۲۸۰ گرم</span>
+<span class="product-spec-tag">۱۵۰ سانت</span>
+<span class="product-spec-tag">چهارفصل</span>
+<span class="product-spec-tag" style="color:rgba(0,180,148,0.7)">سرمه‌ای</span>
+</div>
+<div class="product-footer">
+<div class="product-price-wrap">
+<div class="product-price">۱,۲۵۰,۰۰۰ ت</div>
+</div>
+<button class="product-add-btn" onclick="event.stopPropagation()">
+<svg viewbox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg>
+                    افزودن
+                  </button>
+</div>
+</div>
+</div>
+<div class="product-card" data-color="خاکستری" data-price="۸۸۰۰۰۰" data-season="تابستانه" data-type="viol" onclick="location.href='product.html?id=2'">
+<div class="product-badge badge-hot">پرفروش</div>
+<div class="product-img">
+<div class="product-img-bg pt-2"></div>
+<div class="product-img-overlay"></div>
+<div class="product-actions">
+<button class="product-action-btn" onclick="event.stopPropagation()" title="علاقه‌مندی">
+<svg viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+</button>
+<button class="product-action-btn" onclick="event.stopPropagation()" title="مقایسه">
+<svg viewbox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+</button>
+</div>
+</div>
+<div class="product-body">
+<div class="product-meta">
+<span class="product-type">VIOL</span>
+<div class="product-stars">★★★★★ <span>(۳۸)</span></div>
+</div>
+<h3 class="product-name">فاستونی ویول راه‌راه — خاکستری</h3>
+<p class="product-desc">پشم و پلی‌استر، سبک‌وزن، ایده‌آل برای فصل گرم</p>
+<div class="product-specs">
+<span class="product-spec-tag">۲۲۰ گرم</span>
+<span class="product-spec-tag">۱۴۸ سانت</span>
+<span class="product-spec-tag">تابستانه</span>
+<span class="product-spec-tag" style="color:rgba(0,180,148,0.7)">خاکستری</span>
+</div>
+<div class="product-footer">
+<div class="product-price-wrap">
+<div class="product-price-old">۱,۰۰۰,۰۰۰ ت</div>
+<div class="product-price">۸۸۰,۰۰۰ ت</div>
+</div>
+<button class="product-add-btn" onclick="event.stopPropagation()">
+<svg viewbox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg>
+                    افزودن
+                  </button>
+</div>
+</div>
+</div>
+<div class="product-card" data-color="قهوه‌ای" data-price="۹۶۰۰۰۰" data-season="چهارفصل" data-type="gabardine" onclick="location.href='product.html?id=3'">
+<div class="product-img">
+<div class="product-img-bg pt-3"></div>
+<div class="product-img-overlay"></div>
+<div class="product-actions">
+<button class="product-action-btn" onclick="event.stopPropagation()" title="علاقه‌مندی">
+<svg viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+</button>
+<button class="product-action-btn" onclick="event.stopPropagation()" title="مقایسه">
+<svg viewbox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+</button>
+</div>
+</div>
+<div class="product-body">
+<div class="product-meta">
+<span class="product-type">GABARDINE</span>
+<div class="product-stars">★★★★☆ <span>(۱۷)</span></div>
+</div>
+<h3 class="product-name">فاستونی گابردین چهارخانه — قهوه‌ای</h3>
+<p class="product-desc">پشم و ویسکوز، ضد چروک، مناسب کت‌شلوار رسمی</p>
+<div class="product-specs">
+<span class="product-spec-tag">۳۲۰ گرم</span>
+<span class="product-spec-tag">۱۵۰ سانت</span>
+<span class="product-spec-tag">چهارفصل</span>
+<span class="product-spec-tag" style="color:rgba(0,180,148,0.7)">قهوه‌ای</span>
+</div>
+<div class="product-footer">
+<div class="product-price-wrap">
+<div class="product-price">۹۶۰,۰۰۰ ت</div>
+</div>
+<button class="product-add-btn" onclick="event.stopPropagation()">
+<svg viewbox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg>
+                    افزودن
+                  </button>
+</div>
+</div>
+</div>
+<div class="product-card" data-color="نوک‌مدادی" data-price="۱۱۰۰۰۰۰" data-season="زمستانه" data-type="flannel" onclick="location.href='product.html?id=4'">
+<div class="product-badge badge-new">جدید</div>
+<div class="product-img">
+<div class="product-img-bg pt-4"></div>
+<div class="product-img-overlay"></div>
+<div class="product-actions">
+<button class="product-action-btn" onclick="event.stopPropagation()" title="علاقه‌مندی">
+<svg viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+</button>
+<button class="product-action-btn" onclick="event.stopPropagation()" title="مقایسه">
+<svg viewbox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+</button>
+</div>
+</div>
+<div class="product-body">
+<div class="product-meta">
+<span class="product-type">FLANNEL</span>
+<div class="product-stars">★★★★★ <span>(۲۱)</span></div>
+</div>
+<h3 class="product-name">فاستونی فلانل کشمیر — نوک‌مدادی</h3>
+<p class="product-desc">پشم و کشمیر، گرم و نرم، مخصوص فصل سرد</p>
+<div class="product-specs">
+<span class="product-spec-tag">۳۸۰ گرم</span>
+<span class="product-spec-tag">۱۵۲ سانت</span>
+<span class="product-spec-tag">زمستانه</span>
+<span class="product-spec-tag" style="color:rgba(0,180,148,0.7)">نوک‌مدادی</span>
+</div>
+<div class="product-footer">
+<div class="product-price-wrap">
+<div class="product-price">۱,۱۰۰,۰۰۰ ت</div>
+</div>
+<button class="product-add-btn" onclick="event.stopPropagation()">
+<svg viewbox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg>
+                    افزودن
+                  </button>
+</div>
+</div>
+</div>
+<div class="product-card" data-color="سبز" data-price="۱۴۵۰۰۰۰" data-season="پاییزه" data-type="tweed" onclick="location.href='product.html?id=5'">
+<div class="product-img">
+<div class="product-img-bg pt-5"></div>
+<div class="product-img-overlay"></div>
+<div class="product-actions">
+<button class="product-action-btn" onclick="event.stopPropagation()" title="علاقه‌مندی">
+<svg viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+</button>
+<button class="product-action-btn" onclick="event.stopPropagation()" title="مقایسه">
+<svg viewbox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+</button>
+</div>
+</div>
+<div class="product-body">
+<div class="product-meta">
+<span class="product-type">TWEED</span>
+<div class="product-stars">★★★★★ <span>(۱۲)</span></div>
+</div>
+<h3 class="product-name">فاستونی تویید اسکاتلندی — سبز</h3>
+<p class="product-desc">پشم اسکاتلندی اصل، بافت ترکیبی خاص</p>
+<div class="product-specs">
+<span class="product-spec-tag">۴۲۰ گرم</span>
+<span class="product-spec-tag">۱۴۸ سانت</span>
+<span class="product-spec-tag">پاییزه</span>
+<span class="product-spec-tag" style="color:rgba(0,180,148,0.7)">سبز</span>
+</div>
+<div class="product-footer">
+<div class="product-price-wrap">
+<div class="product-price">۱,۴۵۰,۰۰۰ ت</div>
+</div>
+<button class="product-add-btn" onclick="event.stopPropagation()">
+<svg viewbox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg>
+                    افزودن
+                  </button>
+</div>
+</div>
+</div>
+<div class="product-card" data-color="مشکی" data-price="۱۱۲۰۰۰۰" data-season="چهارفصل" data-type="merino" onclick="location.href='product.html?id=6'">
+<div class="product-badge badge-sale">تخفیف</div>
+<div class="product-img">
+<div class="product-img-bg pt-6"></div>
+<div class="product-img-overlay"></div>
+<div class="product-actions">
+<button class="product-action-btn" onclick="event.stopPropagation()" title="علاقه‌مندی">
+<svg viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+</button>
+<button class="product-action-btn" onclick="event.stopPropagation()" title="مقایسه">
+<svg viewbox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+</button>
+</div>
+</div>
+<div class="product-body">
+<div class="product-meta">
+<span class="product-type">MERINO</span>
+<div class="product-stars">★★★★☆ <span>(۳۱)</span></div>
+</div>
+<h3 class="product-name">فاستونی مرینوس ساده — مشکی</h3>
+<p class="product-desc">۱۰۰٪ پشم مرینوس، ساده و کلاسیک، مناسب هر مناسبت</p>
+<div class="product-specs">
+<span class="product-spec-tag">۳۰۰ گرم</span>
+<span class="product-spec-tag">۱۵۰ سانت</span>
+<span class="product-spec-tag">چهارفصل</span>
+<span class="product-spec-tag" style="color:rgba(0,180,148,0.7)">مشکی</span>
+</div>
+<div class="product-footer">
+<div class="product-price-wrap">
+<div class="product-price-old">۱,۴۰۰,۰۰۰ ت</div>
+<div class="product-price">۱,۱۲۰,۰۰۰ ت</div>
+</div>
+<button class="product-add-btn" onclick="event.stopPropagation()">
+<svg viewbox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg>
+                    افزودن
+                  </button>
+</div>
+</div>
+</div>
+<div class="product-card" data-color="سرمه‌ای" data-price="۸۵۰۰۰۰" data-season="چهارفصل" data-type="gabardine" onclick="location.href='product.html?id=7'">
+<div class="product-img">
+<div class="product-img-bg pt-2"></div>
+<div class="product-img-overlay"></div>
+<div class="product-actions">
+<button class="product-action-btn" onclick="event.stopPropagation()" title="علاقه‌مندی">
+<svg viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+</button>
+<button class="product-action-btn" onclick="event.stopPropagation()" title="مقایسه">
+<svg viewbox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+</button>
+</div>
+</div>
+<div class="product-body">
+<div class="product-meta">
+<span class="product-type">GABARDINE</span>
+<div class="product-stars">★★★★★ <span>(۴۵)</span></div>
+</div>
+<h3 class="product-name">فاستونی گابردین ساده — سرمه‌ای</h3>
+<p class="product-desc">پشم و پلی‌استر، ضد چروک، مناسب کت‌شلوار اداری</p>
+<div class="product-specs">
+<span class="product-spec-tag">۲۹۰ گرم</span>
+<span class="product-spec-tag">۱۵۰ سانت</span>
+<span class="product-spec-tag">چهارفصل</span>
+<span class="product-spec-tag" style="color:rgba(0,180,148,0.7)">سرمه‌ای</span>
+</div>
+<div class="product-footer">
+<div class="product-price-wrap">
+<div class="product-price">۸۵۰,۰۰۰ ت</div>
+</div>
+<button class="product-add-btn" onclick="event.stopPropagation()">
+<svg viewbox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg>
+                    افزودن
+                  </button>
+</div>
+</div>
+</div>
+<div class="product-card" data-color="کرم" data-price="۷۵۰۰۰۰" data-season="تابستانه" data-type="viol" onclick="location.href='product.html?id=8'">
+<div class="product-badge badge-hot">پرفروش</div>
+<div class="product-img">
+<div class="product-img-bg pt-4"></div>
+<div class="product-img-overlay"></div>
+<div class="product-actions">
+<button class="product-action-btn" onclick="event.stopPropagation()" title="علاقه‌مندی">
+<svg viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+</button>
+<button class="product-action-btn" onclick="event.stopPropagation()" title="مقایسه">
+<svg viewbox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+</button>
+</div>
+</div>
+<div class="product-body">
+<div class="product-meta">
+<span class="product-type">VIOL</span>
+<div class="product-stars">★★★★★ <span>(۲۹)</span></div>
+</div>
+<h3 class="product-name">فاستونی ویول ساده — کرم</h3>
+<p class="product-desc">پشم و لینن، بسیار سبک، مناسب مجالس تابستانی</p>
+<div class="product-specs">
+<span class="product-spec-tag">۲۰۰ گرم</span>
+<span class="product-spec-tag">۱۵۲ سانت</span>
+<span class="product-spec-tag">تابستانه</span>
+<span class="product-spec-tag" style="color:rgba(0,180,148,0.7)">کرم</span>
+</div>
+<div class="product-footer">
+<div class="product-price-wrap">
+<div class="product-price">۷۵۰,۰۰۰ ت</div>
+</div>
+<button class="product-add-btn" onclick="event.stopPropagation()">
+<svg viewbox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg>
+                    افزودن
+                  </button>
+</div>
+</div>
+</div>
+<div class="product-card" data-color="آبی" data-price="۱۳۵۰۰۰۰" data-season="بهاره" data-type="merino" onclick="location.href='product.html?id=9'">
+<div class="product-img">
+<div class="product-img-bg pt-5"></div>
+<div class="product-img-overlay"></div>
+<div class="product-actions">
+<button class="product-action-btn" onclick="event.stopPropagation()" title="علاقه‌مندی">
+<svg viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+</button>
+<button class="product-action-btn" onclick="event.stopPropagation()" title="مقایسه">
+<svg viewbox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+</button>
+</div>
+</div>
+<div class="product-body">
+<div class="product-meta">
+<span class="product-type">MERINO</span>
+<div class="product-stars">★★★★★ <span>(۱۸)</span></div>
+</div>
+<h3 class="product-name">فاستونی مرینوس راه‌راه — آبی</h3>
+<p class="product-desc">مرینوس و ویسکوز، طرح راه‌راه ظریف، مجلسی</p>
+<div class="product-specs">
+<span class="product-spec-tag">۲۷۰ گرم</span>
+<span class="product-spec-tag">۱۵۰ سانت</span>
+<span class="product-spec-tag">بهاره</span>
+<span class="product-spec-tag" style="color:rgba(0,180,148,0.7)">آبی</span>
+</div>
+<div class="product-footer">
+<div class="product-price-wrap">
+<div class="product-price">۱,۳۵۰,۰۰۰ ت</div>
+</div>
+<button class="product-add-btn" onclick="event.stopPropagation()">
+<svg viewbox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg>
+                    افزودن
+                  </button>
+</div>
+</div>
+</div>
+<div class="product-card" data-color="قهوه‌ای" data-price="۹۶۰۰۰۰" data-season="زمستانه" data-type="flannel" onclick="location.href='product.html?id=10'">
+<div class="product-badge badge-sale">تخفیف</div>
+<div class="product-img">
+<div class="product-img-bg pt-3"></div>
+<div class="product-img-overlay"></div>
+<div class="product-actions">
+<button class="product-action-btn" onclick="event.stopPropagation()" title="علاقه‌مندی">
+<svg viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+</button>
+<button class="product-action-btn" onclick="event.stopPropagation()" title="مقایسه">
+<svg viewbox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+</button>
+</div>
+</div>
+<div class="product-body">
+<div class="product-meta">
+<span class="product-type">FLANNEL</span>
+<div class="product-stars">★★★★☆ <span>(۱۴)</span></div>
+</div>
+<h3 class="product-name">فاستونی فلانل ساده — قهوه‌ای</h3>
+<p class="product-desc">پشم خالص، گرم، مناسب پالتو و کت زمستانی</p>
+<div class="product-specs">
+<span class="product-spec-tag">۴۰۰ گرم</span>
+<span class="product-spec-tag">۱۵۲ سانت</span>
+<span class="product-spec-tag">زمستانه</span>
+<span class="product-spec-tag" style="color:rgba(0,180,148,0.7)">قهوه‌ای</span>
+</div>
+<div class="product-footer">
+<div class="product-price-wrap">
+<div class="product-price-old">۱,۲۰۰,۰۰۰ ت</div>
+<div class="product-price">۹۶۰,۰۰۰ ت</div>
+</div>
+<button class="product-add-btn" onclick="event.stopPropagation()">
+<svg viewbox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg>
+                    افزودن
+                  </button>
+</div>
+</div>
+</div>
+<div class="product-card" data-color="خاکستری" data-price="۹۲۰۰۰۰" data-season="چهارفصل" data-type="gabardine" onclick="location.href='product.html?id=11'">
+<div class="product-img">
+<div class="product-img-bg pt-6"></div>
+<div class="product-img-overlay"></div>
+<div class="product-actions">
+<button class="product-action-btn" onclick="event.stopPropagation()" title="علاقه‌مندی">
+<svg viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+</button>
+<button class="product-action-btn" onclick="event.stopPropagation()" title="مقایسه">
+<svg viewbox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+</button>
+</div>
+</div>
+<div class="product-body">
+<div class="product-meta">
+<span class="product-type">GABARDINE</span>
+<div class="product-stars">★★★★★ <span>(۲۲)</span></div>
+</div>
+<h3 class="product-name">فاستونی گابردین راه‌راه — خاکستری</h3>
+<p class="product-desc">پشم و پلی‌استر، طرح راه‌راه کلاسیک، رسمی</p>
+<div class="product-specs">
+<span class="product-spec-tag">۳۱۰ گرم</span>
+<span class="product-spec-tag">۱۵۰ سانت</span>
+<span class="product-spec-tag">چهارفصل</span>
+<span class="product-spec-tag" style="color:rgba(0,180,148,0.7)">خاکستری</span>
+</div>
+<div class="product-footer">
+<div class="product-price-wrap">
+<div class="product-price">۹۲۰,۰۰۰ ت</div>
+</div>
+<button class="product-add-btn" onclick="event.stopPropagation()">
+<svg viewbox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg>
+                    افزودن
+                  </button>
+</div>
+</div>
+</div>
+<div class="product-card" data-color="زرشکی" data-price="۱۶۵۰۰۰۰" data-season="پاییزه" data-type="tweed" onclick="location.href='product.html?id=12'">
+<div class="product-badge badge-new">جدید</div>
+<div class="product-img">
+<div class="product-img-bg pt-1"></div>
+<div class="product-img-overlay"></div>
+<div class="product-actions">
+<button class="product-action-btn" onclick="event.stopPropagation()" title="علاقه‌مندی">
+<svg viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+</button>
+<button class="product-action-btn" onclick="event.stopPropagation()" title="مقایسه">
+<svg viewbox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+</button>
+</div>
+</div>
+<div class="product-body">
+<div class="product-meta">
+<span class="product-type">TWEED</span>
+<div class="product-stars">★★★★★ <span>(۹)</span></div>
+</div>
+<h3 class="product-name">فاستونی تویید چهارخانه — زرشکی</h3>
+<p class="product-desc">پشم اسکاتلندی، طرح چهارخانه، برای افراد خاص‌پسند</p>
+<div class="product-specs">
+<span class="product-spec-tag">۴۵۰ گرم</span>
+<span class="product-spec-tag">۱۴۸ سانت</span>
+<span class="product-spec-tag">پاییزه</span>
+<span class="product-spec-tag" style="color:rgba(0,180,148,0.7)">زرشکی</span>
+</div>
+<div class="product-footer">
+<div class="product-price-wrap">
+<div class="product-price">۱,۶۵۰,۰۰۰ ت</div>
+</div>
+<button class="product-add-btn" onclick="event.stopPropagation()">
+<svg viewbox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg>
+                    افزودن
+                  </button>
+</div>
+</div>
+</div>
+<div class="product-card" data-color="خاکستری" data-price="۱۲۵۰۰۰۰" data-season="چهارفصل" data-type="merino" onclick="location.href='product.html?id=13'">
+<div class="product-img">
+<div class="product-img-bg pt-3"></div>
+<div class="product-img-overlay"></div>
+<div class="product-actions">
+<button class="product-action-btn" onclick="event.stopPropagation()" title="علاقه‌مندی">
+<svg viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+</button>
+<button class="product-action-btn" onclick="event.stopPropagation()" title="مقایسه">
+<svg viewbox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+</button>
+</div>
+</div>
+<div class="product-body">
+<div class="product-meta">
+<span class="product-type">MERINO WOOL</span>
+<div class="product-stars">★★★★★ <span>(۱۶)</span></div>
+</div>
+<h3 class="product-name">فاستونی مرینوس ایتالیایی — خاکستری</h3>
+<p class="product-desc">۱۰۰٪ پشم مرینوس، رنگ خاکستری کلاسیک برای کت‌شلوار</p>
+<div class="product-specs">
+<span class="product-spec-tag">۲۸۰ گرم</span>
+<span class="product-spec-tag">۱۵۰ سانت</span>
+<span class="product-spec-tag">چهارفصل</span>
+<span class="product-spec-tag" style="color:rgba(0,180,148,0.7)">خاکستری</span>
+</div>
+<div class="product-footer">
+<div class="product-price-wrap">
+<div class="product-price">۱,۲۵۰,۰۰۰ ت</div>
+</div>
+<button class="product-add-btn" onclick="event.stopPropagation()">
+<svg viewbox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg>
+                    افزودن
+                  </button>
+</div>
+</div>
+</div>
+<div class="product-card" data-color="آبی" data-price="۸۲۰۰۰۰" data-season="تابستانه" data-type="viol" onclick="location.href='product.html?id=14'">
+<div class="product-badge badge-new">جدید</div>
+<div class="product-img">
+<div class="product-img-bg pt-5"></div>
+<div class="product-img-overlay"></div>
+<div class="product-actions">
+<button class="product-action-btn" onclick="event.stopPropagation()" title="علاقه‌مندی">
+<svg viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+</button>
+<button class="product-action-btn" onclick="event.stopPropagation()" title="مقایسه">
+<svg viewbox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+</button>
+</div>
+</div>
+<div class="product-body">
+<div class="product-meta">
+<span class="product-type">VIOL</span>
+<div class="product-stars">★★★★☆ <span>(۸)</span></div>
+</div>
+<h3 class="product-name">فاستونی ویول چهارخانه — آبی</h3>
+<p class="product-desc">پشم و پلی‌استر، طرح چهارخانه ریز، تابستانه</p>
+<div class="product-specs">
+<span class="product-spec-tag">۲۱۰ گرم</span>
+<span class="product-spec-tag">۱۴۸ سانت</span>
+<span class="product-spec-tag">تابستانه</span>
+<span class="product-spec-tag" style="color:rgba(0,180,148,0.7)">آبی</span>
+</div>
+<div class="product-footer">
+<div class="product-price-wrap">
+<div class="product-price">۸۲۰,۰۰۰ ت</div>
+</div>
+<button class="product-add-btn" onclick="event.stopPropagation()">
+<svg viewbox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg>
+                    افزودن
+                  </button>
+</div>
+</div>
+</div>
+<div class="product-card" data-color="سرمه‌ای" data-price="۱۲۸۰۰۰۰" data-season="زمستانه" data-type="flannel" onclick="location.href='product.html?id=15'">
+<div class="product-badge badge-hot">پرفروش</div>
+<div class="product-img">
+<div class="product-img-bg pt-2"></div>
+<div class="product-img-overlay"></div>
+<div class="product-actions">
+<button class="product-action-btn" onclick="event.stopPropagation()" title="علاقه‌مندی">
+<svg viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+</button>
+<button class="product-action-btn" onclick="event.stopPropagation()" title="مقایسه">
+<svg viewbox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+</button>
+</div>
+</div>
+<div class="product-body">
+<div class="product-meta">
+<span class="product-type">FLANNEL</span>
+<div class="product-stars">★★★★★ <span>(۲۷)</span></div>
+</div>
+<h3 class="product-name">فاستونی فلانل زمستانی — سرمه‌ای</h3>
+<p class="product-desc">پشم و کشمیر درجه یک، گرمای بی‌نظیر زمستان</p>
+<div class="product-specs">
+<span class="product-spec-tag">۴۲۰ گرم</span>
+<span class="product-spec-tag">۱۵۲ سانت</span>
+<span class="product-spec-tag">زمستانه</span>
+<span class="product-spec-tag" style="color:rgba(0,180,148,0.7)">سرمه‌ای</span>
+</div>
+<div class="product-footer">
+<div class="product-price-wrap">
+<div class="product-price-old">۱,۵۰۰,۰۰۰ ت</div>
+<div class="product-price">۱,۲۸۰,۰۰۰ ت</div>
+</div>
+<button class="product-add-btn" onclick="event.stopPropagation()">
+<svg viewbox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg>
+                    افزودن
+                  </button>
+</div>
+</div>
+</div>
+<div class="product-card" data-color="مشکی" data-price="۱۱۵۰۰۰۰" data-season="چهارفصل" data-type="gabardine" onclick="location.href='product.html?id=16'">
+<div class="product-img">
+<div class="product-img-bg pt-4"></div>
+<div class="product-img-overlay"></div>
+<div class="product-actions">
+<button class="product-action-btn" onclick="event.stopPropagation()" title="علاقه‌مندی">
+<svg viewbox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+</button>
+<button class="product-action-btn" onclick="event.stopPropagation()" title="مقایسه">
+<svg viewbox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+</button>
+</div>
+</div>
+<div class="product-body">
+<div class="product-meta">
+<span class="product-type">GABARDINE</span>
+<div class="product-stars">★★★★★ <span>(۳۳)</span></div>
+</div>
+<h3 class="product-name">فاستونی گابردین درجه یک — مشکی</h3>
+<p class="product-desc">پشم خالص، بافت فشرده، بهترین انتخاب برای کت رسمی</p>
+<div class="product-specs">
+<span class="product-spec-tag">۳۵۰ گرم</span>
+<span class="product-spec-tag">۱۵۰ سانت</span>
+<span class="product-spec-tag">چهارفصل</span>
+<span class="product-spec-tag" style="color:rgba(0,180,148,0.7)">مشکی</span>
+</div>
+<div class="product-footer">
+<div class="product-price-wrap">
+<div class="product-price">۱,۱۵۰,۰۰۰ ت</div>
+</div>
+<button class="product-add-btn" onclick="event.stopPropagation()">
+<svg viewbox="0 0 24 24"><line x1="12" x2="12" y1="5" y2="19"></line><line x1="5" x2="19" y1="12" y2="12"></line></svg>
+                    افزودن
+                  </button>
+</div>
+</div>
+</div>
+
+        </div>
+
+          <div class="shop-pagination">
+<button class="page-btn"><svg viewbox="0 0 24 24"><polyline points="15 18 9 12 15 6"></polyline></svg></button>
+<button class="page-btn active">۱</button>
+<button class="page-btn">۲</button>
+<button class="page-btn">۳</button>
+<span style="color:var(--text-faint);font-size:13px;padding:0 4px">...</span>
+<button class="page-btn">۱۰</button>
+<button class="page-btn"><svg viewbox="0 0 24 24"><polyline points="9 18 15 12 9 6"></polyline></svg></button>
+          </div>
+
+      </div>
+    </div>
+  </main>
+<footer class="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<div class="footer-logo">
+<img alt="ایران مرینوس" src="assets/images/logo.png"/>
+<span class="footer-logo-name">ایران <span>مرینوس</span></span>
+</div>
+<p class="footer-tagline">تولیدکننده و عرضه‌کننده تخصصی انواع فاستونی — از کارخانه مستقیم به دست شما.</p>
+<div class="footer-social">
+<button class="footer-social-btn"><svg viewbox="0 0 24 24"><rect height="20" rx="5" width="20" x="2" y="2"></rect><circle cx="12" cy="12" r="5"></circle><circle cx="17.5" cy="6.5" fill="currentColor" r="1" stroke="none"></circle></svg></button>
+<button class="footer-social-btn"><svg viewbox="0 0 24 24"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"></path></svg></button>
+<button class="footer-social-btn"><svg viewbox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></button>
+</div>
+</div>
+<div class="footer-col">
+<div class="footer-col-title">دسترسی سریع</div>
+<div class="footer-links">
+<a class="footer-link" href="index.html">صفحه اصلی</a>
+<a class="footer-link" href="shop.html">فروشگاه</a>
+<a class="footer-link" href="about.html">درباره ما</a>
+<a class="footer-link" href="contact.html">تماس با ما</a>
+</div>
+</div>
+<div class="footer-col">
+<div class="footer-col-title">محصولات</div>
+<div class="footer-links">
+<a class="footer-link" href="shop.html">فاستونی مرینوس</a>
+<a class="footer-link" href="shop.html">فاستونی ویول</a>
+<a class="footer-link" href="shop.html">فاستونی گابردین</a>
+<a class="footer-link" href="shop.html">فاستونی فلانل</a>
+<a class="footer-link" href="shop.html">فاستونی تویید</a>
+</div>
+</div>
+<div class="footer-col">
+<div class="footer-col-title">تماس با ما</div>
+<div class="footer-contact-item">
+<div class="footer-contact-icon"><svg viewbox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.5 2 2 0 0 1 3.59 1.3h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.8a16 16 0 0 0 6 6l.86-.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16z"></path></svg></div>
+<div><div class="footer-contact-label">تلفن</div><div class="footer-contact-val">۰۲۱ — ۸۸۴۴۵۵۶۶</div></div>
+</div>
+<div class="footer-contact-item">
+<div class="footer-contact-icon"><svg viewbox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg></div>
+<div><div class="footer-contact-label">ایمیل</div><div class="footer-contact-val">info@iranmerinos.ir</div></div>
+</div>
+<div class="footer-contact-item">
+<div class="footer-contact-icon"><svg viewbox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
+<div><div class="footer-contact-label">آدرس</div><div class="footer-contact-val">تهران، بازار بزرگ پارچه</div></div>
+</div>
+</div>
+</div>
+<div class="footer-bottom">
+<div class="footer-copy">© ۱۴۰۴ ایران مرینوس — تمامی حقوق محفوظ است</div>
+<div class="footer-made">با ❤ ساخته شده در ایران</div>
+</div>
+</div>
+</footer>
+<script src="assets/js/app.js"></script>
+  <script src="assets/js/shop.js"></script>
+</body>
+</html>

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>پنل مدیریت | ایران مرینوس</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <meta name="description" content="پنل مدیریت ایران مرینوس">
+  <meta property="og:title" content="پنل مدیریت | ایران مرینوس">
+  <meta property="og:description" content="پنل مدیریت ایران مرینوس">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="image" href="assets/images/logo.png">
+</head>
+<body>
+
+  <div class="textile-bg"></div>
+  <div class="bg-glow"></div>
+  <div class="bg-vignette"></div>
+
+  <div class="admin-page">
+
+    <!-- Sidebar -->
+    <aside class="admin-sidebar">
+      <div class="admin-logo">
+        <img src="assets/images/logo.png" alt="">
+        <span class="admin-logo-name">ایران <span>مرینوس</span></span>
+        <span class="admin-logo-badge">ADMIN</span>
+      </div>
+
+      <nav class="admin-nav">
+        <div class="admin-nav-label">داشبورد</div>
+        <div class="admin-nav-item active" onclick="showSection('dashboard',this)">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          داشبورد
+        </div>
+
+        <div class="admin-nav-label">فروشگاه</div>
+        <div class="admin-nav-item" onclick="showSection('products',this)">
+          <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          محصولات
+          <span class="admin-nav-badge">۳۰</span>
+        </div>
+        <div class="admin-nav-item" onclick="showSection('orders',this)">
+          <svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          سفارشات
+          <span class="admin-nav-badge">۸</span>
+        </div>
+        <div class="admin-nav-item" onclick="showSection('customers',this)">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          مشتریان
+        </div>
+
+        <div class="admin-nav-label">محتوا</div>
+        <div class="admin-nav-item" onclick="showSection('settings',this)">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          تنظیمات
+        </div>
+        <div class="admin-nav-item" onclick="location.href='index.html'">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          بازگشت به سایت
+        </div>
+      </nav>
+
+      <div class="admin-sidebar-bottom">
+        <div class="admin-user">
+          <div class="admin-user-avatar">م</div>
+          <div>
+            <div class="admin-user-name">محمد اکبری</div>
+            <div class="admin-user-role">مدیر کل</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main -->
+    <div class="admin-main">
+
+      <!-- Topbar -->
+      <div class="admin-topbar">
+        <div class="admin-topbar-title" id="topbarTitle">داشبورد</div>
+        <div class="admin-topbar-right">
+          <button class="admin-topbar-btn admin-btn-ghost">
+            <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            اعلان‌ها
+          </button>
+          <button class="admin-topbar-btn admin-btn-primary" id="addBtn" onclick="alert('فرم افزودن محصول')">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            افزودن محصول
+          </button>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="admin-content">
+
+        <!-- ── Dashboard ── -->
+        <div class="admin-section active" id="section-dashboard">
+
+          <div class="admin-stats">
+            <div class="admin-stat-card">
+              <div class="admin-stat-top">
+                <div class="admin-stat-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+                <span class="admin-stat-trend trend-up">↑ ۱۲٪</span>
+              </div>
+              <div class="admin-stat-num">۴۸,۶۰۰,۰۰۰</div>
+              <div class="admin-stat-label">فروش این ماه (تومان)</div>
+            </div>
+            <div class="admin-stat-card">
+              <div class="admin-stat-top">
+                <div class="admin-stat-icon"><svg viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg></div>
+                <span class="admin-stat-trend trend-up">↑ ۸٪</span>
+              </div>
+              <div class="admin-stat-num">۳۸</div>
+              <div class="admin-stat-label">سفارش این ماه</div>
+            </div>
+            <div class="admin-stat-card">
+              <div class="admin-stat-top">
+                <div class="admin-stat-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                <span class="admin-stat-trend trend-up">↑ ۵٪</span>
+              </div>
+              <div class="admin-stat-num">۵۲۴</div>
+              <div class="admin-stat-label">کل مشتریان</div>
+            </div>
+            <div class="admin-stat-card">
+              <div class="admin-stat-top">
+                <div class="admin-stat-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
+                <span class="admin-stat-trend trend-down">↓ ۳٪</span>
+              </div>
+              <div class="admin-stat-num">۳۰</div>
+              <div class="admin-stat-label">محصولات فعال</div>
+            </div>
+          </div>
+
+          <div class="admin-grid">
+            <div class="admin-panel">
+              <div class="admin-panel-header">
+                <div class="admin-panel-title">فروش ماهانه</div>
+                <div class="admin-panel-action">گزارش کامل</div>
+              </div>
+              <div class="admin-chart"><div class="chart-bar-wrap"><div class="chart-bar" style="height:40%;"></div><div class="chart-label">فر</div></div><div class="chart-bar-wrap"><div class="chart-bar" style="height:65%;"></div><div class="chart-label">ار</div></div><div class="chart-bar-wrap"><div class="chart-bar" style="height:50%;"></div><div class="chart-label">خر</div></div><div class="chart-bar-wrap"><div class="chart-bar" style="height:80%;"></div><div class="chart-label">دی</div></div><div class="chart-bar-wrap"><div class="chart-bar" style="height:95%;"></div><div class="chart-label">بهـ</div></div><div class="chart-bar-wrap"><div class="chart-bar" style="height:70%;"></div><div class="chart-label">شه</div></div><div class="chart-bar-wrap"><div class="chart-bar" style="height:85%;"></div><div class="chart-label">مر</div></div><div class="chart-bar-wrap"><div class="chart-bar" style="height:60%;"></div><div class="chart-label">تیر</div></div><div class="chart-bar-wrap"><div class="chart-bar" style="height:90%;"></div><div class="chart-label">مرد</div></div><div class="chart-bar-wrap"><div class="chart-bar" style="height:75%;"></div><div class="chart-label">شه</div></div><div class="chart-bar-wrap"><div class="chart-bar" style="height:100%;"></div><div class="chart-label">مهر</div></div><div class="chart-bar-wrap"><div class="chart-bar" style="height:88%;"></div><div class="chart-label">آب</div></div></div>
+            </div>
+
+            <div class="admin-panel">
+              <div class="admin-panel-header">
+                <div class="admin-panel-title">سفارشات اخیر</div>
+                <div class="admin-panel-action">مشاهده همه</div>
+              </div>
+              <div class="admin-orders">
+              <div class="order-item">
+                <div class="order-num">#۱۲۴۵</div>
+                <div class="order-info">
+                  <div class="order-name">احمد رضایی</div>
+                  <div class="order-date">فاستونی مرینوس × ۳ متر</div>
+                </div>
+                <span class="tbl-badge tbl-badge-green">موجود</span>
+                <div class="order-amount">۳,۷۵۰,۰۰۰ ت</div>
+              </div>
+              <div class="order-item">
+                <div class="order-num">#۱۲۴۴</div>
+                <div class="order-info">
+                  <div class="order-name">مریم کریمی</div>
+                  <div class="order-date">فاستونی ویول × ۲ متر</div>
+                </div>
+                <span class="tbl-badge tbl-badge-orange">در ارسال</span>
+                <div class="order-amount">۱,۷۶۰,۰۰۰ ت</div>
+              </div>
+              <div class="order-item">
+                <div class="order-num">#۱۲۴۳</div>
+                <div class="order-info">
+                  <div class="order-name">سعید محمدی</div>
+                  <div class="order-date">فاستونی گابردین × ۵ متر</div>
+                </div>
+                <span class="tbl-badge tbl-badge-green">تحویل داده شد</span>
+                <div class="order-amount">۴,۸۰۰,۰۰۰ ت</div>
+              </div>
+              <div class="order-item">
+                <div class="order-num">#۱۲۴۲</div>
+                <div class="order-info">
+                  <div class="order-name">فاطمه نوری</div>
+                  <div class="order-date">فاستونی فلانل × ۴ متر</div>
+                </div>
+                <span class="tbl-badge tbl-badge-red">در انتظار</span>
+                <div class="order-amount">۴,۴۰۰,۰۰۰ ت</div>
+              </div>
+              <div class="order-item">
+                <div class="order-num">#۱۲۴۱</div>
+                <div class="order-info">
+                  <div class="order-name">علی حسینی</div>
+                  <div class="order-date">فاستونی تویید × ۲ متر</div>
+                </div>
+                <span class="tbl-badge tbl-badge-green">تحویل داده شد</span>
+                <div class="order-amount">۲,۹۰۰,۰۰۰ ت</div>
+              </div></div>
+            </div>
+          </div>
+
+          <div class="admin-panel">
+            <div class="admin-panel-header">
+              <div class="admin-panel-title">پرفروش‌ترین محصولات</div>
+              <div class="admin-panel-action">مشاهده همه</div>
+            </div>
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead><tr>
+                  <th></th><th>نام محصول</th><th>نوع</th><th>قیمت</th><th>موجودی</th><th>وضعیت</th><th>عملیات</th>
+                </tr></thead>
+                <tbody>
+            <tr>
+              <td><input type="checkbox" style="accent-color:var(--green)"></td>
+              <td><span class="tbl-product-name">فاستونی مرینوس ایتالیایی — سرمه‌ای</span></td>
+              <td><span class="tbl-badge tbl-badge-green">مرینوس</span></td>
+              <td>۱,۲۵۰,۰۰۰ ت</td>
+              <td>۴۸ متر</td>
+              <td><span class="tbl-badge tbl-badge-green">موجود</span></td>
+              <td>
+                <div class="tbl-actions">
+                  <button class="tbl-action-btn" title="ویرایش"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  <button class="tbl-action-btn" title="مشاهده"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="tbl-action-btn danger" title="حذف"><svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" style="accent-color:var(--green)"></td>
+              <td><span class="tbl-product-name">فاستونی ویول راه‌راه — خاکستری</span></td>
+              <td><span class="tbl-badge tbl-badge-green">ویول</span></td>
+              <td>۸۸۰,۰۰۰ ت</td>
+              <td>۳۲ متر</td>
+              <td><span class="tbl-badge tbl-badge-green">موجود</span></td>
+              <td>
+                <div class="tbl-actions">
+                  <button class="tbl-action-btn" title="ویرایش"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  <button class="tbl-action-btn" title="مشاهده"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="tbl-action-btn danger" title="حذف"><svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" style="accent-color:var(--green)"></td>
+              <td><span class="tbl-product-name">فاستونی گابردین چهارخانه — قهوه‌ای</span></td>
+              <td><span class="tbl-badge tbl-badge-green">گابردین</span></td>
+              <td>۹۶۰,۰۰۰ ت</td>
+              <td>۱۲ متر</td>
+              <td><span class="tbl-badge tbl-badge-orange">کم</span></td>
+              <td>
+                <div class="tbl-actions">
+                  <button class="tbl-action-btn" title="ویرایش"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  <button class="tbl-action-btn" title="مشاهده"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="tbl-action-btn danger" title="حذف"><svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" style="accent-color:var(--green)"></td>
+              <td><span class="tbl-product-name">فاستونی فلانل کشمیر — نوک‌مدادی</span></td>
+              <td><span class="tbl-badge tbl-badge-green">فلانل</span></td>
+              <td>۱,۱۰۰,۰۰۰ ت</td>
+              <td>۰ متر</td>
+              <td><span class="tbl-badge tbl-badge-red">ناموجود</span></td>
+              <td>
+                <div class="tbl-actions">
+                  <button class="tbl-action-btn" title="ویرایش"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  <button class="tbl-action-btn" title="مشاهده"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="tbl-action-btn danger" title="حذف"><svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></button>
+                </div>
+              </td>
+      </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Products ── -->
+        <div class="admin-section" id="section-products">
+          <div class="admin-panel admin-products-table">
+            <div class="admin-panel-header">
+              <div class="admin-panel-title">مدیریت محصولات</div>
+              <button class="admin-topbar-btn admin-btn-primary" onclick="alert('افزودن محصول جدید')">
+                <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                محصول جدید
+              </button>
+            </div>
+            <div class="admin-search-bar">
+              <input class="admin-search-input" type="text" placeholder="جستجوی محصول...">
+              <button class="admin-topbar-btn admin-btn-ghost">فیلتر</button>
+            </div>
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead><tr>
+                  <th><input type="checkbox" style="accent-color:var(--green)"></th>
+                  <th>نام محصول</th><th>نوع</th><th>قیمت</th><th>موجودی</th><th>وضعیت</th><th>عملیات</th>
+                </tr></thead>
+                <tbody>
+            <tr>
+              <td><input type="checkbox" style="accent-color:var(--green)"></td>
+              <td><span class="tbl-product-name">فاستونی مرینوس ایتالیایی — سرمه‌ای</span></td>
+              <td><span class="tbl-badge tbl-badge-green">مرینوس</span></td>
+              <td>۱,۲۵۰,۰۰۰ ت</td>
+              <td>۴۸ متر</td>
+              <td><span class="tbl-badge tbl-badge-green">موجود</span></td>
+              <td>
+                <div class="tbl-actions">
+                  <button class="tbl-action-btn" title="ویرایش"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  <button class="tbl-action-btn" title="مشاهده"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="tbl-action-btn danger" title="حذف"><svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" style="accent-color:var(--green)"></td>
+              <td><span class="tbl-product-name">فاستونی ویول راه‌راه — خاکستری</span></td>
+              <td><span class="tbl-badge tbl-badge-green">ویول</span></td>
+              <td>۸۸۰,۰۰۰ ت</td>
+              <td>۳۲ متر</td>
+              <td><span class="tbl-badge tbl-badge-green">موجود</span></td>
+              <td>
+                <div class="tbl-actions">
+                  <button class="tbl-action-btn" title="ویرایش"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  <button class="tbl-action-btn" title="مشاهده"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="tbl-action-btn danger" title="حذف"><svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" style="accent-color:var(--green)"></td>
+              <td><span class="tbl-product-name">فاستونی گابردین چهارخانه — قهوه‌ای</span></td>
+              <td><span class="tbl-badge tbl-badge-green">گابردین</span></td>
+              <td>۹۶۰,۰۰۰ ت</td>
+              <td>۱۲ متر</td>
+              <td><span class="tbl-badge tbl-badge-orange">کم</span></td>
+              <td>
+                <div class="tbl-actions">
+                  <button class="tbl-action-btn" title="ویرایش"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  <button class="tbl-action-btn" title="مشاهده"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="tbl-action-btn danger" title="حذف"><svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" style="accent-color:var(--green)"></td>
+              <td><span class="tbl-product-name">فاستونی فلانل کشمیر — نوک‌مدادی</span></td>
+              <td><span class="tbl-badge tbl-badge-green">فلانل</span></td>
+              <td>۱,۱۰۰,۰۰۰ ت</td>
+              <td>۰ متر</td>
+              <td><span class="tbl-badge tbl-badge-red">ناموجود</span></td>
+              <td>
+                <div class="tbl-actions">
+                  <button class="tbl-action-btn" title="ویرایش"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  <button class="tbl-action-btn" title="مشاهده"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="tbl-action-btn danger" title="حذف"><svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" style="accent-color:var(--green)"></td>
+              <td><span class="tbl-product-name">فاستونی تویید اسکاتلندی — سبز</span></td>
+              <td><span class="tbl-badge tbl-badge-green">تویید</span></td>
+              <td>۱,۴۵۰,۰۰۰ ت</td>
+              <td>۲۴ متر</td>
+              <td><span class="tbl-badge tbl-badge-green">موجود</span></td>
+              <td>
+                <div class="tbl-actions">
+                  <button class="tbl-action-btn" title="ویرایش"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  <button class="tbl-action-btn" title="مشاهده"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="tbl-action-btn danger" title="حذف"><svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" style="accent-color:var(--green)"></td>
+              <td><span class="tbl-product-name">فاستونی مرینوس ساده — مشکی</span></td>
+              <td><span class="tbl-badge tbl-badge-green">مرینوس</span></td>
+              <td>۱,۱۲۰,۰۰۰ ت</td>
+              <td>۶۰ متر</td>
+              <td><span class="tbl-badge tbl-badge-green">موجود</span></td>
+              <td>
+                <div class="tbl-actions">
+                  <button class="tbl-action-btn" title="ویرایش"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  <button class="tbl-action-btn" title="مشاهده"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="tbl-action-btn danger" title="حذف"><svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" style="accent-color:var(--green)"></td>
+              <td><span class="tbl-product-name">فاستونی گابردین ساده — سرمه‌ای</span></td>
+              <td><span class="tbl-badge tbl-badge-green">گابردین</span></td>
+              <td>۸۵۰,۰۰۰ ت</td>
+              <td>۸ متر</td>
+              <td><span class="tbl-badge tbl-badge-orange">کم</span></td>
+              <td>
+                <div class="tbl-actions">
+                  <button class="tbl-action-btn" title="ویرایش"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  <button class="tbl-action-btn" title="مشاهده"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="tbl-action-btn danger" title="حذف"><svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td><input type="checkbox" style="accent-color:var(--green)"></td>
+              <td><span class="tbl-product-name">فاستونی ویول ساده — کرم</span></td>
+              <td><span class="tbl-badge tbl-badge-green">ویول</span></td>
+              <td>۷۵۰,۰۰۰ ت</td>
+              <td>۴۴ متر</td>
+              <td><span class="tbl-badge tbl-badge-green">موجود</span></td>
+              <td>
+                <div class="tbl-actions">
+                  <button class="tbl-action-btn" title="ویرایش"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>
+                  <button class="tbl-action-btn" title="مشاهده"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></button>
+                  <button class="tbl-action-btn danger" title="حذف"><svg viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/></svg></button>
+                </div>
+              </td>
+            </tr></tbody>
+              </table>
+            </div>
+            <div class="admin-pages">
+              <span>نمایش ۱-۸ از ۳۰ محصول</span>
+              <div class="admin-pages-btns">
+                <button class="admin-page-btn"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+                <button class="admin-page-btn active">۱</button>
+                <button class="admin-page-btn">۲</button>
+                <button class="admin-page-btn">۳</button>
+                <button class="admin-page-btn"><svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Orders ── -->
+        <div class="admin-section" id="section-orders">
+          <div class="admin-panel">
+            <div class="admin-panel-header">
+              <div class="admin-panel-title">مدیریت سفارشات</div>
+              <div class="admin-panel-action">خروجی اکسل</div>
+            </div>
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead><tr>
+                  <th>شماره</th><th>مشتری</th><th>محصول</th><th>مبلغ</th><th>وضعیت</th><th>عملیات</th>
+                </tr></thead>
+                <tbody>
+                  <tr><td>#۱۲۴۵</td><td>احمد رضایی</td><td>فاستونی مرینوس × ۳م</td><td>۳,۷۵۰,۰۰۰ ت</td><td><span class="tbl-badge tbl-badge-green">موجود</span></td><td><div class="tbl-actions"><button class="tbl-action-btn"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button></div></td></tr>
+                  <tr><td>#۱۲۴۴</td><td>مریم کریمی</td><td>فاستونی ویول × ۲م</td><td>۱,۷۶۰,۰۰۰ ت</td><td><span class="tbl-badge tbl-badge-orange">در ارسال</span></td><td><div class="tbl-actions"><button class="tbl-action-btn"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button></div></td></tr>
+                  <tr><td>#۱۲۴۳</td><td>سعید محمدی</td><td>فاستونی گابردین × ۵م</td><td>۴,۸۰۰,۰۰۰ ت</td><td><span class="tbl-badge tbl-badge-green">تحویل داده شد</span></td><td><div class="tbl-actions"><button class="tbl-action-btn"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button></div></td></tr>
+                  <tr><td>#۱۲۴۲</td><td>فاطمه نوری</td><td>فاستونی فلانل × ۴م</td><td>۴,۴۰۰,۰۰۰ ت</td><td><span class="tbl-badge tbl-badge-red">در انتظار</span></td><td><div class="tbl-actions"><button class="tbl-action-btn"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button></div></td></tr>
+                  <tr><td>#۱۲۴۱</td><td>علی حسینی</td><td>فاستونی تویید × ۲م</td><td>۲,۹۰۰,۰۰۰ ت</td><td><span class="tbl-badge tbl-badge-green">تحویل داده شد</span></td><td><div class="tbl-actions"><button class="tbl-action-btn"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button></div></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Customers ── -->
+        <div class="admin-section" id="section-customers">
+          <div class="admin-panel">
+            <div class="admin-panel-header">
+              <div class="admin-panel-title">مدیریت مشتریان</div>
+            </div>
+            <div class="admin-table-wrap">
+              <table class="admin-table">
+                <thead><tr><th>نام</th><th>موبایل</th><th>تعداد سفارش</th><th>جمع خرید</th><th>وضعیت</th></tr></thead>
+                <tbody>
+                  <tr><td><span class="tbl-product-name">احمد رضایی</span></td><td>۰۹۱۲-۱۱۱۱۱۱۱</td><td>۵</td><td>۱۲,۵۰۰,۰۰۰ ت</td><td><span class="tbl-badge tbl-badge-green">فعال</span></td></tr>
+                  <tr><td><span class="tbl-product-name">مریم کریمی</span></td><td>۰۹۱۳-۲۲۲۲۲۲۲</td><td>۳</td><td>۷,۲۰۰,۰۰۰ ت</td><td><span class="tbl-badge tbl-badge-green">فعال</span></td></tr>
+                  <tr><td><span class="tbl-product-name">سعید محمدی</span></td><td>۰۹۱۴-۳۳۳۳۳۳۳</td><td>۸</td><td>۲۲,۴۰۰,۰۰۰ ت</td><td><span class="tbl-badge tbl-badge-green">فعال</span></td></tr>
+                  <tr><td><span class="tbl-product-name">فاطمه نوری</span></td><td>۰۹۱۵-۴۴۴۴۴۴۴</td><td>۱</td><td>۴,۴۰۰,۰۰۰ ت</td><td><span class="tbl-badge tbl-badge-orange">جدید</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── Settings ── -->
+        <div class="admin-section" id="section-settings">
+          <div class="admin-panel">
+            <div class="admin-panel-header">
+              <div class="admin-panel-title">تنظیمات سایت</div>
+            </div>
+            <div style="padding:28px;display:flex;flex-direction:column;gap:20px;">
+              <div class="login-form-group">
+                <label class="login-form-label">نام سایت</label>
+                <div class="login-form-input-wrap"><input class="login-form-input" type="text" value="ایران مرینوس"></div>
+              </div>
+              <div class="login-form-group">
+                <label class="login-form-label">ایمیل مدیر</label>
+                <div class="login-form-input-wrap"><input class="login-form-input" type="email" value="info@iranmerinos.ir"></div>
+              </div>
+              <div class="login-form-group">
+                <label class="login-form-label">شماره تماس</label>
+                <div class="login-form-input-wrap"><input class="login-form-input" type="text" value="۰۲۱-۸۸۴۴۵۵۶۶"></div>
+              </div>
+              <button class="login-submit" style="max-width:200px;" onclick="alert('تنظیمات ذخیره شد')">ذخیره تغییرات</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <script>
+    const titles = {
+      dashboard: 'داشبورد',
+      products:  'مدیریت محصولات',
+      orders:    'مدیریت سفارشات',
+      customers: 'مدیریت مشتریان',
+      settings:  'تنظیمات'
+    };
+
+    function showSection(id, navEl) {
+      document.querySelectorAll('.admin-section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.admin-nav-item').forEach(n => n.classList.remove('active'));
+      document.getElementById('section-' + id).classList.add('active');
+      if(navEl) navEl.classList.add('active');
+      document.getElementById('topbarTitle').textContent = titles[id] || '';
+    }
+  </script>
+
+  <script src="assets/js/admin.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
